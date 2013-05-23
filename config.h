@@ -1,11 +1,21 @@
-#define MOUSE_XORG
-#define MOUSE_LINUX
+#ifndef CONFIG_H_INCLUDE
+#define CONFIG_H_INCLUDE
 
-#ifndef AMSL_LINUX
-#warning This program is tested only on Linux.
+//Yet Another Input Sinking Program
+
+#define YAISP_UNIX
+#define YAISP_XORG
+
+#ifndef YAISP_UNIX
+#error This program is made for Unix with X Windows Server (and tested on Linux).
 #endif
 
-#ifndef AMSL_X
-#error You need X server to run this.
+#ifndef YAISP_XORG
+#error This program needs X Server to run.
 #endif
 
+#ifdef YAISP_UNIX
+#include <unistd.h>
+#endif
+
+#endif //CONFIG_H_INCLUDE
