@@ -6,11 +6,13 @@
  * Maybe later on, I will add Windows and OS X support.
  */
 
+#include "config.h"
+
 typedef char byte;
 
 void init_input_lib(void);
 
-void move_mose(int x, int y);
+void move_mouse(int x, int y);
 
 void mouse_press(byte key);
 void mouse_release(byte key);

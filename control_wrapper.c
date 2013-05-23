@@ -22,7 +22,7 @@ void init_input_lib(void) {
 
 void move_mouse(int x, int y) {
    XWarpPointer(input_data.dpy, None, input_data.root_window, 0, 0, 0, 0, x, y);
-   XFlush(dpy);
+   XFlush(input_data.dpy);
 }
 
 void mouse_press(byte key)       {}
