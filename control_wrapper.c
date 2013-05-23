@@ -15,6 +15,11 @@ struct {
 } input_data;
 
 void init_input_lib(void) {
+   static bool initialized = false;
+   if (initialized)
+      return;
+   initialized = true;
+
    input_data.dpy = XOpenDisplay(0);
    input_data.root_window = XRootWindow(input_data.dpy, 0);
    XSelectInput(input_data.dpy, input_data.root_window, KeyReleaseMask);  
@@ -25,7 +30,10 @@ void move_mouse(int x, int y) {
    XFlush(input_data.dpy);
 }
 
-void mouse_press(byte key)       {}
+void mouse_press(byte key)       {
+
+}
+
 void mouse_release(byte key)     {}
 void key_press(unsigned key)     {}
 void key_release(unsigned key)   {}

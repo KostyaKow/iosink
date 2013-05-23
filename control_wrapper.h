@@ -9,6 +9,10 @@
 #include "config.h"
 
 typedef char byte;
+typedef char bool;
+
+#define true  1
+#define false 0
 
 void init_input_lib(void);
 
